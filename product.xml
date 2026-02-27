@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 示例：CiA-402 伺服参数配置 -->
+<Servos>
+	<Servo node_id="2" heartbeat_ms="1000">
+		<PDOs>
+			<TPDO id="0x180">
+				<Map index="0x6041" size="16"/>
+			</TPDO>
+			<RPDO id="0x200">
+				<Map index="0x6040" size="16"/>
+				<Map index="0x6060" size="8"/>
+			</RPDO>
+		</PDOs>
+		<SDOParameters>
+			<Controlword index="0x6040" sub="0"/>
+			<Statusword index="0x6041" sub="0"/>
+			<ModesOfOperation index="0x6060" sub="0"/>
+			<TargetPosition index="0x607A" sub="0"/>
+			<PositionActual index="0x6064" sub="0"/>
+			<MaxProfileVelocity index="0x607F" sub="0"/>
+			<ProfileAcceleration index="0x6083" sub="0"/>
+			<ProfileDeceleration index="0x6084" sub="0"/>
+			<HomingMethod index="0x6098" sub="0"/>
+		</SDOParameters>
+		<Limits max_velocity_rpm="3000" max_acceleration_rpm_s="10000" max_torque_nm="5.0" pos_min="-1000000" pos_max="1000000"/>
+		<MotionDefaults mode="profile_position" velocity="1500" accel="2000" decel="2000"/>
+		<Encoder counts_per_rev="4096" gear_ratio="1.0"/>
+		<Homing method="1" speed_fast="1000" speed_slow="100" offset="0"/>
+	</Servo>
+</Servos>
